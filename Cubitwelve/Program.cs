@@ -68,6 +68,7 @@ app.UseHttpsRedirection();
 
 app.MapControllers();
 
+
 // Database Bootstrap
 AppSeedService.SeedDatabase(app);
 

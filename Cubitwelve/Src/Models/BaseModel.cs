@@ -4,11 +4,11 @@ namespace Cubitwelve.Src.Models
     {
         public int Id { get; set; }
 
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-        public DateTime UpdatedAt { get; set; } = DateTime.Now;
-
-        public DateTime? DeletedAt { get; set; } = null;
+        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+        //cambio realizado
+        public DateTime? DeletedAt { get; set; }
 
         public int Version { get; set; } = 1;
     }
