@@ -17,7 +17,8 @@ builder.Services.AddCors(options =>
                                             "http://localhost:8100",
                                             "http://localhost",
                                             "https://catedra3-backend.onrender.com",
-                                            "http://localhost:3000");
+                                            "http://localhost:3000",
+                                            "https://cubi12-front-latest-nneb.onrender.com");
                       });
     options.AddPolicy(name: deployedAllowSpecificOrigins,
                       policy =>
@@ -29,7 +30,8 @@ builder.Services.AddCors(options =>
                                             "https://cubi12.cl",
                                             "http://localhost:3000",
                                             "https://www.cubi12.cl",
-                                            "https://catedra3-backend.onrender.com"
+                                            "https://catedra3-backend.onrender.com",
+                                            "https://cubi12-front-latest-nneb.onrender.com"
                                             );
                       });
 });
