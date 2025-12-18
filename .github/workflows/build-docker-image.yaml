@@ -6,6 +6,9 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v3
     
@@ -14,7 +17,6 @@ jobs:
 
     - name: Login to Docker Hub
       uses: docker/login-action@v2
-
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -25,4 +27,6 @@ jobs:
         context: ./Cubitwelve
         file: ./Cubitwelve/Dockerfile
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/catedra3-backend:latest, ${{secrets.DOCKERHUB_USERNAME}}/catedra3-backend:${{github.sha}}
+        tags: |
+          ${{ secrets.DOCKERHUB_USERNAME }}/catedra3-backend:latest
+          ${{ secrets.DOCKERHUB_USERNAME }}/catedra3-backend:${{ github.sha }}
